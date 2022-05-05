@@ -1,0 +1,73 @@
+{
+  "name": "rias-gremory",
+  "version": "2.0.0",
+  "description": "A multipurpose Discord bot with many NSFW and fun commands as well as utility, moderation SFW commands and more.",
+  "main": "index.js",
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "booru": "^2.4.0",
+    "common-tags": "^1.8.0",
+    "cpu-stat": "^2.0.1",
+    "discord-economy": "^1.2.2",
+    "discord-rpc": "^3.2.0",
+    "discord.js": "^12.5.3",
+    "duration-format": "^0.0.2",
+    "ffmpeg-static": "^4.3.0",
+    "figlet": "^1.5.0",
+    "got": "^11.8.2",
+    "jimp": "^0.16.1",
+    "mal-scraper": "^2.11.3",
+    "math-expression-evaluator": "^1.3.7",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "nekos.life": "^2.0.7",
+    "node-fetch": "^3.1.1",
+    "node-osu": "^2.2.1",
+    "random-puppy": "^1.1.0",
+    "request-promise-native": "^1.0.9",
+    "sqlite3": "^5.0.2",
+    "urban.js": "^2.4.3",
+    "ws": "^7.4.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bill716/Rias-Gremory.git"
+  },
+  "keywords": [
+    "doritos",
+    "dorito",
+    "discord",
+    "discord-js",
+    "discord.js",
+    "discord-api",
+    "discord-music-bot",
+    "discord-bot",
+    "discordbot",
+    "youtube",
+    "music",
+    "hentai",
+    "nsfw",
+    "hentai-bot",
+    "hentai-sites",
+    "booru",
+    "booru-websites",
+    "music-bot",
+    "nodejs",
+    "npm",
+    "node-js",
+    "porn",
+    "multipurpose",
+    "gaming",
+    "utility"
+  ],
+  "author": "Aaronidk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bill716/Rias-Gremory/issues"
+  },
+  "homepage": "https://github.com/Bill716/Rias-Gremory#readme"
+}

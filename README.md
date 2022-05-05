@@ -1,10 +1,10 @@
-# [Dorito Bot Discord.js](https://github.com/Aaronidk/Dorito-bot-discord.js) 
+# [Rias Gremory Bot Discord.js](https://github.com/Bill716/Rias-Gremory) 
 A multipurpose Discord bot with many NSFW and fun commands as well as utility and moderation.
 
  UPDATE COMMING SOON FOR DISCORD JS 13 AND NEW DISCORD INTENT RULES
 * For a full command list run the bot and type .help
 * The default prefix is . so the help command would be .help 
-# [Invite the bot to your server!](https://discordapp.com/oauth2/authorize?client_id=546100087579738133&scope=bot&permissions=506588246) 
+# [Invite the bot to your server!](https://discordapp.com/oauth2/authorize?client_id=900279926874316871&scope=bot&permissions=506588246) 
 * Use the above link if you don't want to follow the steps bellow.
 
 ### Requirements if not using the release page
@@ -86,4 +86,4 @@ or you can try type this in the terminal for Linux and maybe Windows " npm i ffm
 * Once in the osu.js file you should see text telling you where to paste your api key.
 * Now that you finished setting the API key save the the file and run the bot. The osu command should now work.
 * If you don't care about the osu command or you don't want to get an api key go into the "/commands/utility/" folder and delete the osu.js command. 
-> This Bot was made by [nyeku/nyekuuu]().
+> This Bot was made by [Bill_hub](https://github.com/Bill716).
