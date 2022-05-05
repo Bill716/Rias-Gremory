@@ -53,7 +53,7 @@ Your token is what you use to log the bot in.
 5. Updating the node_modules can be done with the update .bat file
 6. If these bat files don't work I suggest downloading the bot from the release page instead. (this may contain outdated node_modules)
 
-If you want the node_modules folder to be pre installed instead of running install.bat, go to the [Release page and download the latest zip file](https://github.com/Aaronidk/Dorito-bot-discord.js/releases) 
+If you want the node_modules folder to be pre installed instead of running install.bat, go to the [Release page and download the latest zip file](https://github.com/Bill716/Rias-Gremory/releases) 
 ## Adding the bot to your server:
 1. Go back to the [Discord Developer Portal](https://discordapp.com/developers/applications/) and click on your application.
 2. Go to the **General Information** tab and you should see your client ID.
