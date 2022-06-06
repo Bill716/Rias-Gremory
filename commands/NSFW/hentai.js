@@ -1,39 +1,43 @@
-const client = require('nekos.life');
-const Discord = require('discord.js')
-const neko = new client();
+const Discord = require("discord.js"),
+commandName = __filename.slice(__dirname.length + 1, -3),
+disbut = require("discord-buttons");
 
-module.exports = {
-  name: "hentai",
-  category: "NSFW",
-  description: "Sends random hentai",
-  usage: "[command]",
-  run: async (client, message, args) => {
-  //command
+exports.run = async (client, message, args) => {
+  if (!message.channel.nsfw) return message.channel.send(client.config.msg.nsfwWarn)
 
-  //Checks channel for nsfw
-  var errMessage = "This is not an NSFW Channel";
-  if (!message.channel.nsfw) {
-      message.react('💢');
+  let load = new Discord.MessageEmbed()
+    .setDescription(client.config.msg.loading)
+    .setTimestamp()
 
-      return message.reply(errMessage)
-      .then(msg => {
-      msg.delete({ timeout: 3000 })
-      })
-      
-  }
+  message.channel.send(load).then(m => {
 
-        async function work() {
-        let owo = (await neko.nsfw.hentai());
+    client.superagent.get('https://nekobot.xyz/api/image').query({
+      type: commandName
+    }).end((err, response) => {
 
-        const hentai = new Discord.MessageEmbed()
-        .setTitle("Hentai")
-        .setImage(owo.url)
-        .setColor(`#FF0000`)
-        .setURL(owo.url);
-        message.channel.send(hentai);
+      let button = new disbut.MessageButton()
+        .setStyle('url')
+        .setURL(response.body.message)
+        .setLabel(client.config.msg.imageNotLoading);
 
-}
+      let embed = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setImage(response.body.message)
+        .setFooter(client.config.footer)
 
-      work();
-}
-                };
+      m.edit(embed, button);
+    });
+  });
+};
+
+exports.help = {
+  name: commandName,
+  description: `Send a ${commandName} image.`,
+  usage: commandName,
+  example: commandName
+};
+
+exports.conf = {
+  aliases: [],
+  cooldown: 5 // Integer = second.
+};
