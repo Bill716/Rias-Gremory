@@ -1,41 +1,43 @@
-const superagent = require("node-fetch");
-const Discord = require('discord.js')
+const Discord = require("discord.js"),
+commandName = __filename.slice(__dirname.length + 1, -3),
+disbut = require("discord-buttons");
 
-const rp = require('request-promise-native');
+exports.run = async (client, message, args) => {
+  if (!message.channel.nsfw) return message.channel.send(client.config.msg.nsfwWarn)
 
-module.exports = {
-    name: "boobs",
-    category: "NSFW",
-  description: "Sends boobs",
-  run: async (client, message, args, level) => {
-  //command
+  let load = new Discord.MessageEmbed()
+    .setDescription(client.config.msg.loading)
+    .setTimestamp()
 
-  //Checks channel for nsfw
-  var errMessage = "This is not an NSFW Channel";
-  if (!message.channel.nsfw) {
-      message.react('💢');
+  message.channel.send(load).then(m => {
 
-      return message.reply(errMessage)
-      .then(msg => {
-      msg.delete({ timeout: 3000 })
-      })
-      
-  }
+    client.superagent.get('https://nekobot.xyz/api/image').query({
+      type: commandName
+    }).end((err, response) => {
 
-  return rp.get('http://api.oboobs.ru/boobs/0/1/random').then(JSON.parse).then(function(res)  {
-    return rp.get({
-        url:'http://media.oboobs.ru/' + res[0].preview,
-        encoding: null
+      let button = new disbut.MessageButton()
+        .setStyle('url')
+        .setURL(response.body.message)
+        .setLabel(client.config.msg.imageNotLoading);
+
+      let embed = new Discord.MessageEmbed()
+        .setTimestamp()
+        .setImage(response.body.message)
+        .setFooter(client.config.footer)
+
+      m.edit(embed, button);
     });
-}).then(function(res)   {
+  });
+};
 
-const boobs = new Discord.MessageEmbed()
-      .setTitle("Boobs")
-      .setColor(`#FF0000`)
-      .setImage("attachment://file.png").attachFiles([{ attachment: res, name: "file.png" }])
+exports.help = {
+  name: commandName,
+  description: `Send a ${commandName} image.`,
+  usage: commandName,
+  example: commandName
+};
 
-
-    message.channel.send(boobs);
-});
-  }
-  };
+exports.conf = {
+  aliases: [],
+  cooldown: 5 // Integer = second.
+};

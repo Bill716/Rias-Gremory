@@ -1,3 +1,0 @@
-
-call npm update
-pause
