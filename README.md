@@ -10,7 +10,7 @@ NSFW Bot is an open-source discord bot that has nsfw commands running with the n
 ## How to install ?
 
 ```bash
-git clone https://github.com/Sayrix/NSFW-Bot
+git clone https://github.com/Bill716/Rias-Gremory
 cd NSFW-Bot
 npm i
 ```
@@ -23,7 +23,7 @@ npm i
   "prefix": "your prefix",
   "token": "your token",
   "owners": ["OWNER ID"],
-  "footer": "NSFW Bot • is.gd/nsfwbot",
+  "footer": "NSFW Bot • By Bill_Hub",
 
   "msg": {
     "nsfwWarn": "You must use this command in an nsfw channel!",
