@@ -1,7 +1,7 @@
 {
-  "prefix": "your prefix",
-  "token": "your token",
-  "owners": ["OWNER ID"],
+  "prefix": "|",
+  "token": "token",
+  "owners": ["640512148786642947"],
   "footer": "NSFW Bot • is.gd/nsfwbot",
 
   "msg": {
